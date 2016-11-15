@@ -139,6 +139,7 @@ pub enum Lang {
     Tex,
     Text,
     Toml,
+    Trill,
     TypeScript,
     UnrealScript,
     VimScript,
@@ -243,6 +244,7 @@ impl Lang {
             Tex => "TeX",
             Text => "Plain Text",
             Toml => "Toml",
+            Trill => "Trill",
             TypeScript => "TypeScript",
             UnrealScript => "UnrealScript",
             VimScript => "VimL",
@@ -370,6 +372,7 @@ pub fn lang_from_ext(filepath: &str) -> Lang {
         "tcl" => Tcl,
         "tex" | "sty" => Tex,
         "toml" => Toml,
+        "trill" | "tr" => Trill,
         "ts" => TypeScript,
         "thy" => Isabelle,
         "uc" | "uci" | "upkg" => UnrealScript,
@@ -464,7 +467,7 @@ pub fn counter_config_for_lang<'a>(lang: &Lang) -> LineConfig<'a> {
         C | CCppHeader | Rust | Yacc | ActionScript | ColdFusionScript | Css | Cpp | CUDA |
         CUDAHeader | CSharp | Dart | DeviceTree | Glsl | Go | Jai | Java | JavaScript | Jsx |
         Kotlin | Less | LinkerScript | ObjectiveC | ObjectiveCpp | Qcl | Sass | Scala | Swift |
-        TypeScript | UnrealScript | Stylus => c_style,
+        Trill | TypeScript | UnrealScript | Stylus => c_style,
 
         Unrecognized => unreachable!(),
     };
